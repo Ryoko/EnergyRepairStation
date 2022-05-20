@@ -1,0 +1,25 @@
+﻿<Project Sdk="">
+  <PropertyGroup Label="Configuration">
+    <!-- Please set your mod ID here -->
+    <AssemblyName>EnergyRepairStationMod</AssemblyName>
+    <!-- Please define the C# root namespace for your mod here -->
+    <RootNamespace>AtomicTorch.CBND.CoreMod</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <CryoFallSdk>$(ProjectDir)..\CryoFall.Mod.Sdk\</CryoFallSdk>
+    <CryoFallSdk Condition="!Exists('$(CryoFallSdk)')">$(ProjectDir)..\..\..\Core\CryoFall.Mod.Sdk\</CryoFallSdk>
+    <CryoFallSdk Condition="!Exists('$(CryoFallSdk)')">"CryoFall SDK cannot be located. Please ensure the mod csproj is located at CryoFall/Data/Mods"</CryoFallSdk>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Core.cpk\AtomicTorch.CBND.CoreMod.csproj" />
+  </ItemGroup>
+  <Import Project="$(CryoFallSdk)Sdk.props" />
+  <ItemGroup>
+    <Compile Remove="Scripts\StaticObjects\Structures\CraftingStations\**" />
+    <None Remove="Scripts\StaticObjects\Structures\CraftingStations\**" />
+    <Page Remove="Scripts\StaticObjects\Structures\CraftingStations\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.31" />
+  </ItemGroup>
+</Project>

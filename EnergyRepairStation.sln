@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnergyRepairStation", "EnergyRepairStation.csproj", "{7D84D9A1-4D20-41FB-A0CE-E138C67732DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtomicTorch.CBND.CoreMod", "..\..\..\Core\Core.cpk\AtomicTorch.CBND.CoreMod.csproj", "{4F844D7C-1851-44D9-903C-C298BBC197C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_LibsAsProjects|Any CPU = Debug_LibsAsProjects|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D84D9A1-4D20-41FB-A0CE-E138C67732DF}.Debug_LibsAsProjects|Any CPU.ActiveCfg = Debug_LibsAsProjects|Any CPU
+		{7D84D9A1-4D20-41FB-A0CE-E138C67732DF}.Debug_LibsAsProjects|Any CPU.Build.0 = Debug_LibsAsProjects|Any CPU
+		{7D84D9A1-4D20-41FB-A0CE-E138C67732DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D84D9A1-4D20-41FB-A0CE-E138C67732DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F844D7C-1851-44D9-903C-C298BBC197C4}.Debug_LibsAsProjects|Any CPU.ActiveCfg = Debug_LibsAsProjects|Any CPU
+		{4F844D7C-1851-44D9-903C-C298BBC197C4}.Debug_LibsAsProjects|Any CPU.Build.0 = Debug_LibsAsProjects|Any CPU
+		{4F844D7C-1851-44D9-903C-C298BBC197C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F844D7C-1851-44D9-903C-C298BBC197C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A0DCCF6-4FD0-4797-A675-0DA6C2F07D67}
+	EndGlobalSection
+EndGlobal
