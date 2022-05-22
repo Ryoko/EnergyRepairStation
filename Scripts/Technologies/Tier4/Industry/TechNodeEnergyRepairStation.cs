@@ -10,6 +10,8 @@
         {
             config.Effects
                   .AddStructure<ObjectEnergyRepairStation>();
+
+            config.SetRequiredNode<TechNodeComponentsHighTech>();
         }
     }
 }

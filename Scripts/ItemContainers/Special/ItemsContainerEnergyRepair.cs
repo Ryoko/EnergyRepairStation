@@ -11,14 +11,9 @@
             //return context.Item.ProtoItem is IProtoItemWithDurability;
             var item = context.Item;
             if (item.ProtoItem
-                    is not IProtoItemWithDurability { DurabilityMax: > 0, IsRepairable: true })
+                    is not IProtoItemWithDurability { DurabilityMax: > 0, IsRepairable: true } )
             {
                 // not a repairable item
-                return false;
-            }
-
-            if (context.IsExploratoryCheck)
-            {
                 return false;
             }
 

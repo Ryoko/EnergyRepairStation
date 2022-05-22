@@ -7,12 +7,23 @@
     using AtomicTorch.CBND.CoreMod.UI.Controls.Game.Items.Data;
     using AtomicTorch.CBND.GameApi.Data.Items;
     using AtomicTorch.CBND.GameApi.Data.State;
+    using AtomicTorch.CBND.GameApi.Scripting;
+    using AtomicTorch.CBND.CoreMod.Systems.ItemDurability;
 
     public class ViewModelEnergyRepairStationItemSlot : BaseViewModel
     {
         private uint? durabilityValueCurrent;
 
         private IItem item;
+
+        private static readonly Brush BrushGreen
+            = Api.Client.UI.GetApplicationResource<Brush>("BrushColorGreen4");
+
+        private static readonly Brush BrushRed
+            = Api.Client.UI.GetApplicationResource<Brush>("BrushColorRed5");
+
+        private static readonly Brush BrushYellow
+            = Api.Client.UI.GetApplicationResource<Brush>("BrushColor5");
 
         public Brush BarBrush { get; private set; }
 
@@ -68,8 +79,18 @@
 
         private Brush GetBarBrush()
         {
-            return ViewModelItemEnergyCharge.GetBrush(DurabilityValueCurrent,
-                                                      DurabilityValueMax);
+            var fraction = this.DurabilityValueCurrent / (double)this.DurabilityValueMax;
+            if (fraction >= ItemDurabilitySystem.ThresholdFractionGreenStatus)
+            {
+                return BrushGreen;
+            }
+
+            if (fraction >= ItemDurabilitySystem.ThresholdFractionYellowStatus)
+            {
+                return BrushYellow;
+            }
+
+            return BrushRed;
         }
 
         private bool TrySetupDurabilityItem()

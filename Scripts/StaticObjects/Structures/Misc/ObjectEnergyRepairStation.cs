@@ -17,7 +17,7 @@
 
         public override bool IsRelocatable => true;
 
-        public override string Name => "Energy Repair station";
+        public override string Name => "Energy repair station";
 
         public override ObjectMaterial ObjectMaterial => ObjectMaterial.Metal;
 
@@ -38,13 +38,15 @@
 
             build.StagesCount = 5;
             build.StageDurationSeconds = BuildDuration.Short;
-            build.AddStageRequiredItem<ItemWire>(count: 5);
-            build.AddStageRequiredItem<ItemIngotSteel>(count: 1);
-            build.AddStageRequiredItem<ItemIngotCopper>(count: 1);
+            build.AddStageRequiredItem<ItemComponentsElectronic>(count: 4);
+            build.AddStageRequiredItem<ItemComponentsHighTech>(count: 4);
+            build.AddStageRequiredItem<ItemOrePragmium>(count: 4);
+            build.AddStageRequiredItem<ItemIngotSteel>(count: 2);
 
             repair.StagesCount = 5;
             repair.StageDurationSeconds = BuildDuration.Short;
-            repair.AddStageRequiredItem<ItemWire>(count: 2);
+            repair.AddStageRequiredItem<ItemComponentsElectronic>(count: 2);
+            repair.AddStageRequiredItem<ItemComponentsHighTech>(count: 2);
             repair.AddStageRequiredItem<ItemIngotSteel>(count: 1);
         }
 

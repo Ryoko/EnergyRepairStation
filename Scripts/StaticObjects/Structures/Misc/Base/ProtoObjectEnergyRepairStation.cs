@@ -207,7 +207,7 @@
             }
 
             // recharge this item
-            var deltaRepair = deltaTime * RepairPerSecondPerSlot;
+            var deltaRepair = Math.Max(deltaTime * RepairPerSecondPerSlot, durabilityMax / 100);
             durability += (uint)deltaRepair;
             durability = Math.Min(durability, durabilityMax);
             privateState.DurabilityCurrent = durability;
